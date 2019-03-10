@@ -1,0 +1,33 @@
+<import src="/template/index.wxml" />
+
+<view>
+  <!-- 搜索 -->
+  <view class="weui-search-bar__form" bindtap="gotoSearch">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{keyword}}" />
+    </view>
+    <label class="weui-search-bar__label">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text">{{keyword}}</view>
+    </label>
+  </view>
+  <Gbanner banners="{{banners}}"></Gbanner>
+
+  <!-- tab标签 -->
+  <view class="weui-tab">
+    <view class="weui-navbar">
+      <block wx:for="{{tabs}}" wx:key="*this">
+        <view id="{{index}}" class="tabnav weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+          <view class="weui-navbar__title">{{item.alias}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" style="width: {{sliderWidth}}rpx; transform: translateX({{sliderOffset}}rpx); -webkit-transform: translateX({{sliderOffset}}rpx);"></view>
+    </view>
+    <view class="weui-tab__panel">
+      <view class="weui-tab__content" hidden="{{activeIndex != index}}" wx:for="{{tabsData}}" wx:key="*this">
+        <template is="list" data="{{datalist:item,index}}" />
+      </view>
+    </view>
+  </view>
+</view>

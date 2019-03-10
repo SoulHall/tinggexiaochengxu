@@ -1,0 +1,6 @@
+<!-- 轮播图 -->
+  <swiper indicator-dots indicator-color="#58bc58" indicator-active-color="#f90" autoplay circular="true">
+    <swiper-item wx:for="{{banners}}" wx:key="song_id" data-songid="{{item.song_id}}" bindtap="gotoPlayer">
+      <image src="{{item.pic_big}}" class="slide-image" height="150" />
+    </swiper-item>
+  </swiper>

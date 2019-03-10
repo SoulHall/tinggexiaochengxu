@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "Gbanner":"/components/banner/banner"
+  }
+}

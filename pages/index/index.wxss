@@ -1,0 +1,11 @@
+/**index.wxss**/
+.slide-image{
+  width:750rpx
+}
+.weui-navbar__item.weui-bar__item_on {
+color:#F11136;
+
+}
+.weui-navbar__slider{
+  background-color:#F11136;
+}
